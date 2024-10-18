@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/UserRoutes");
 const playlistRoutes = require("./routes/PlayListRoutes");
 const classRoutes = require("./routes/LessonListRoutes"); // Import the class routes
+const StudioRoutes = require("./routes/StudioListRoutes"); // Import the class routes
 
 const cors = require("cors");
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/playlists", playlistRoutes);
 app.use("/api", classRoutes); // Prefix the routes with `/api`
+app.use("/api", StudioRoutes); // Prefix the routes with `/api`
 
 // Start server
 const PORT = process.env.PORT || 5000;
